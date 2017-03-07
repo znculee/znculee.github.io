@@ -1,0 +1,19 @@
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=56918idh1jl&amp;m=0&amp;c=54ff00&amp;cr1=ff0000&amp;br=5&amp;sx=0" async="async"></script>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
+    <a class="sidebar-nav-item" href="{{ site.baseurl }}/blogs">Blogs</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      Last update: {{ site.time | date: "%m/%d/%Y" }}
+    </p>
+  </div>
+</div>

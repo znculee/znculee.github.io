@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<head>
+  <style>
+    ul li{
+      list-style-type:none;
+      margin-left: -10px;
+      padding-left:10px;
+      background-color:#F8F8F8
+    }
+    ul li:nth-child(2n+1){
+      list-style-type:none;
+      margin-left: -10px;
+      padding-left:10px;
+      background-color:white
+    }
+  </style>
+</head>
+
+<div class="page">
+  <h1 class="page-title">{{ page.title }}</h1>
+  {{ content }}
+</div>
+
