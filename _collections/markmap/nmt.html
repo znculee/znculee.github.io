@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+a { text-decoration: none; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.1.6/dist/style.min.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@6.6.0"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.2.6"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.1.6/dist/index.umd.min.js"></script><script>(r => {
+          setTimeout(r);
+        })(() => {
+  const {
+    markmap,
+    mm
+  } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, data) => {
+        const {
+          Markmap
+        } = getMarkmap();
+        window.mm = Markmap.create('svg#mindmap', getOptions == null ? void 0 : getOptions(), data);
+      })(() => window.markmap,null,{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"NMT","c":[{"t":"heading","d":2,"p":{"lines":[2,3]},"v":"Understanding Model Architecture","c":[{"t":"heading","d":3,"p":{"lines":[4,5]},"v":"Understanding encoder/decoder","c":[{"t":"heading","d":4,"p":{"lines":[6,7]},"v":"Q. <a href=\"\">Does encoder's representation entail liguistic knowledge?</a>"},{"t":"heading","d":4,"p":{"lines":[7,8]},"v":"Q. <a href=\"\">Can encoder learn word sense disambiguation?</a>"},{"t":"heading","d":4,"p":{"lines":[8,9]},"v":"Q. <a href=\"\">Does decoder's representation entail liguistic knowledge?</a>"},{"t":"heading","d":4,"p":{"lines":[9,10]},"v":"Q. <a href=\"\">Which component of NMT is critical?</a>"}]},{"t":"heading","d":3,"p":{"lines":[11,12]},"v":"Understanding Attention","c":[{"t":"heading","d":4,"p":{"lines":[13,14]},"v":"Cross-attention","c":[{"t":"heading","d":5,"p":{"lines":[15,16]},"v":"Q. <a href=\"\">Does attention leran alignments?</a>"},{"t":"heading","d":5,"p":{"lines":[16,17]},"v":"Q. <a href=\"\">Do attention weights reflect NMT's reasoning?</a>"}]},{"t":"heading","d":4,"p":{"lines":[18,19]},"v":"Self-attention","c":[{"t":"heading","d":5,"p":{"lines":[20,21]},"v":"Q. <a href=\"\">Is self-attention network better than RNN?</a>"},{"t":"heading","d":5,"p":{"lines":[21,22]},"v":"Q. <a href=\"\">Is multi-head better than single-head?</a>"}]}]}]},{"t":"heading","d":2,"p":{"lines":[23,24]},"v":"Understanding Training","c":[{"t":"heading","d":3,"p":{"lines":[25,26]},"v":"Training data"},{"t":"heading","d":3,"p":{"lines":[27,28]},"v":"Training loss"},{"t":"heading","d":3,"p":{"lines":[29,30]},"v":"Training tricks","c":[{"t":"heading","d":4,"p":{"lines":[31,32]},"v":"Q. <a href=\"\">How does LN help?</a>"},{"t":"heading","d":4,"p":{"lines":[32,33]},"v":"Q. <a href=\"\">Which optimizer to use?</a>"},{"t":"heading","d":4,"p":{"lines":[33,34]},"v":"Q. <a href=\"\">How does label smoothing help?</a>"}]}]},{"t":"heading","d":2,"p":{"lines":[35,36]},"v":"Understanding Inference","c":[{"t":"heading","d":3,"p":{"lines":[37,38]},"v":"Prediction explanation","c":[{"t":"heading","d":4,"p":{"lines":[39,40]},"v":"Q. <a href=\"\">How to attribute NMT model's prediciton?</a>"},{"t":"heading","d":4,"p":{"lines":[40,41]},"v":"Q. <a href=\"\">How to properly evaluate prediction attribution of NMT model?</a>"}]},{"t":"heading","d":3,"p":{"lines":[42,43]},"v":"Decoding explanation","c":[{"t":"heading","d":4,"p":{"lines":[44,45]},"v":"Q. <a href=\"\">Do larger beams lead to better results?</a>"},{"t":"heading","d":4,"p":{"lines":[45,46]},"v":"Q. <a href=\"\">Is beam search decoding not good enough?</a>"}]}]},{"t":"heading","d":2,"p":{"lines":[47,48]},"v":"Understanding Model Behavior","c":[{"t":"heading","d":3,"p":{"lines":[49,50]},"v":"Static analysis","c":[{"t":"heading","d":4,"p":{"lines":[51,52]},"v":"Q. <a href=\"\">Is NMT model's prediction linguistically natural?</a>"},{"t":"heading","d":4,"p":{"lines":[52,53]},"v":"Q. <a href=\"\">Can NMT mdoel generate long-tailed translation?</a>"},{"t":"heading","d":4,"p":{"lines":[53,54]},"v":"Q. <a href=\"\">Can NMT model generate calibrated predictions?</a>"}]},{"t":"heading","d":3,"p":{"lines":[55,56]},"v":"Controlled analysis","c":[{"t":"heading","d":4,"p":{"lines":[57,58]},"v":"Q. <a href=\"\">Can NMT model handle inputs with difference types of linguistic phenomenon?</a>"},{"t":"heading","d":4,"p":{"lines":[58,59]},"v":"Q. <a href=\"\">Can NMT model handle inputs compositionally?</a>"}]},{"t":"heading","d":3,"p":{"lines":[60,61]},"v":"Dynamic analysis","c":[{"t":"heading","d":4,"p":{"lines":[62,63]},"v":"Q. <a href=\"\">Is NMT model robust to inputs?</a>"},{"t":"heading","d":4,"p":{"lines":[63,64]},"v":"Q. <a href=\"\">How does training data affect NMT model's prediction?</a>"},{"t":"heading","d":4,"p":{"lines":[64,65]},"v":"Q. <a href=\"\">When or why does NMT model hallucinate?</a>"}]}]}]})</script>
+</body>
+</html>
