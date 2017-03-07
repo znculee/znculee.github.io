@@ -1,0 +1,21 @@
+/*
+ * Math
+ *
+ * Small adjustments on top of katex.min.css.
+ */
+
+/*
+ * More room above and below than KaTeX's default 1em, so stacked equations
+ * read as separate steps. Wide equations scroll rather than overflow.
+ */
+.katex-display {
+  margin: 1.5em 0;
+  padding: .25em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* A failed parse should read as plain text, not shout in red. */
+.katex-error {
+  color: #767676 !important;
+}

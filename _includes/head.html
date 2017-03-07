@@ -1,0 +1,61 @@
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    {% if page.title == "Home" %}
+      {{ site.title }}
+    {% else %}
+      {{ page.title }} &middot; {{ site.title }}
+    {% endif %}
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/poole.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/syntax.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/lanyon.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/blog.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/search.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  {% for stylesheet in page.styles %}
+  <link rel="stylesheet" href="{{ site.baseurl }}{{ stylesheet }}">
+  {% endfor %}
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/public/img/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="{{ site.baseurl }}/public/img/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/math.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script>
+    // Deferred scripts run in order and finish before DOMContentLoaded fires,
+    // so katex and renderMathInElement are both defined by the time this runs.
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        // kramdown turns `$$...$$` into `\[...\]` at build time; single-dollar
+        // inline math is left as-is in the HTML and matched here.
+        delimiters: [
+          {left: "$$",  right: "$$",  display: true},
+          {left: "\\[", right: "\\]", display: true},
+          {left: "\\(", right: "\\)", display: false},
+          {left: "$",   right: "$",   display: false}
+        ],
+        ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code", "option"],
+        // Loosen the default row spacing in {array}; KaTeX packs `\\` rows very
+        // tight, which is hard to read on multi-line derivations.
+        macros: {"\\arraystretch": "1.35"},
+        throwOnError: false
+      });
+    });
+  </script>
+</head>

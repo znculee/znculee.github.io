@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  {% include head.html %}
+
+  <body>
+
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container masthead-inner">
+          <h3 class="masthead-title">
+            <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
+          </h3>
+          <div class="search">
+            <svg class="search-icon search-start" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.25"/><path d="m15.2 15.2 4.55 4.55"/></svg>
+            <input type="text" class="search-input" placeholder="Search" aria-label="Search this site" />
+            <svg class="search-icon search-clear" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10m0-10-10 10"/></svg>
+            <div class="search-results"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content">
+        {{ content }}
+      </div>
+    </div>
+
+    <script src="{{ site.baseurl }}/public/js/search.js"></script>
+
+  </body>
+</html>

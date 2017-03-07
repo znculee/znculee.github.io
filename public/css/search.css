@@ -1,0 +1,145 @@
+/*
+ * Search
+ *
+ * A single field in the masthead with the icons sitting inside it, and a
+ * dropdown of results rendered by public/js/search.js.
+ */
+
+.search {
+  position: relative;
+  width: 100%;
+  max-width: 18rem;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+}
+
+.search-input {
+  width: 100%;
+  height: 1.9rem;
+  margin: 0;
+  padding: 0 1.9rem;
+  font-family: inherit;
+  font-size: .7rem;
+  line-height: 1.9rem;
+  color: #313131;
+  background-color: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color .12s ease-in-out, background-color .12s ease-in-out;
+}
+
+.search-input::placeholder {
+  color: #b0b0b0;
+}
+
+.search-input:focus {
+  outline: none;
+  background-color: #fff;
+  border-color: #268bd2;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: .8rem;
+  height: .8rem;
+  fill: none;
+  stroke: #b0b0b0;
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  cursor: pointer;
+  transition: stroke .12s ease-in-out;
+}
+
+.search-start {
+  left: .55rem;
+}
+
+.search-clear {
+  right: .55rem;
+  display: none;
+}
+
+.search-clear:hover {
+  stroke: #767676;
+}
+
+.search:focus-within .search-start {
+  stroke: #268bd2;
+}
+
+
+/*
+ * Results dropdown
+ *
+ * search.js toggles `display` inline, including on focus with no query, so the
+ * `:empty` rule keeps an empty bordered box from flashing up.
+ */
+
+.search-results {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  top: calc(100% + .4rem);
+  left: 0;
+  right: 0;
+  max-height: 20rem;
+  overflow-y: auto;
+  padding: .3rem;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 .3rem 1.1rem rgba(0, 0, 0, .09);
+}
+
+.search-results:empty {
+  display: none !important;
+}
+
+.search-results .result-item {
+  margin: 0;
+  padding: .4rem .5rem;
+  font-size: .68rem;
+  line-height: 1.45;
+  color: #767676;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-results .result-item:hover {
+  background-color: #f7f7f7;
+}
+
+.search-results .result-item b {
+  font-weight: 400;
+  color: #313131;
+}
+
+/* The first row is the result count, not a link. */
+.search-results .result-item:first-child {
+  cursor: default;
+  font-size: .62rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #9a9a9a;
+}
+
+.search-results .result-item:first-child:hover {
+  background-color: transparent;
+}
+
+.search-results .result-item hr {
+  margin: .25rem 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.search-results mark {
+  padding: 0 .1em;
+  color: #313131;
+  background-color: #fff3bf;
+  border-radius: 2px;
+}

@@ -1,0 +1,226 @@
+/*
+ * Home
+ *
+ * Scoped to the front page. Loaded via `styles:` in index.md front matter.
+ */
+
+
+/*
+ * Intro
+ *
+ * Avatar sits above the text on narrow screens, to the right on wide ones.
+ */
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.intro-avatar {
+  order: -1;
+  align-self: center;
+  display: block;
+  width: 180px;
+  height: auto;
+  margin: 0;
+  border-radius: 6px;
+}
+
+.intro-text p {
+  margin-top: 0;
+}
+
+.intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 38em) {
+  .intro {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .intro-text {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .intro-avatar {
+    order: 0;
+    flex: 0 0 auto;
+    align-self: flex-start;
+    width: 200px;
+  }
+}
+
+
+/*
+ * Social links
+ */
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .6rem;
+  margin: 0 0 2.75rem;
+}
+
+.social a {
+  display: inline-flex;
+  line-height: 0;
+  opacity: .7;
+  transition: opacity .15s ease-in-out;
+}
+
+.social a:hover,
+.social a:focus {
+  opacity: 1;
+}
+
+.social img {
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  border-radius: 0;
+}
+
+
+/*
+ * Sections
+ *
+ * Quiet, uppercase section labels so the content carries the page.
+ */
+
+.home-section {
+  margin-bottom: 2.75rem;
+}
+
+.home-section:last-child {
+  margin-bottom: 4rem;
+}
+
+.home-section > h2 {
+  margin: 0 0 1.25rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid #eee;
+  font-size: .7rem;
+  font-weight: 400;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #9a9a9a;
+}
+
+
+/*
+ * Entries
+ *
+ * A title line with the date pushed to the right, an optional muted meta line,
+ * then optional bullets.
+ */
+
+.entry + .entry {
+  margin-top: 1.5rem;
+}
+
+.entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .1rem 1rem;
+}
+
+.entry-title {
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  color: #313131;
+}
+
+.entry-title .entry-org {
+  color: #767676;
+}
+
+.entry-date {
+  font-size: .75rem;
+  color: #9a9a9a;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.entry-meta {
+  margin: .15rem 0 0;
+  font-size: .8rem;
+  color: #767676;
+}
+
+.entry-list {
+  margin: .5rem 0 0;
+  padding-left: 1.1rem;
+  font-size: .85rem;
+  color: #515151;
+}
+
+.entry-list li {
+  margin-bottom: .25rem;
+}
+
+.entry-list li:last-child {
+  margin-bottom: 0;
+}
+
+.entry-list + .entry-meta,
+.entry-meta + .entry-list {
+  margin-top: .5rem;
+}
+
+
+/*
+ * Publications
+ *
+ * Own name is distinguished by colour rather than weight.
+ */
+
+.home-subsection + .home-subsection {
+  margin-top: 2rem;
+}
+
+.pub-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pub + .pub {
+  margin-top: 1.1rem;
+}
+
+.pub-title {
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+}
+
+.pub-authors {
+  margin: .15rem 0 0;
+  font-size: .8rem;
+  color: #767676;
+}
+
+.pub-me {
+  color: #313131;
+}
+
+.pub-venue {
+  font-size: .8rem;
+  color: #9a9a9a;
+}
+
+.pub-award {
+  color: #b58900;
+}
+
+.note {
+  margin: 1.25rem 0 0;
+  font-size: .8rem;
+  color: #767676;
+}
