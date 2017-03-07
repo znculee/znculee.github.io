@@ -1,0 +1,22 @@
+# Markdown
+markdown: kramdown
+
+# Permalinks
+permalink: /blogs/:categories/:title
+
+# Setup
+title:   Xintong Li
+url:     https://znculee.github.io/
+baseurl: ''
+
+# About/contact
+author:
+  name:  Xintong Li
+  url:   https://znculee.github.io/
+  email: znculee@gmail.com
+
+# Collections
+collections:
+  collections: # name of a collection
+    output: true
+    permalink: /:path
